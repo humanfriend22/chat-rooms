@@ -5,6 +5,9 @@ import { instrument } from '@socket.io/admin-ui';
 
 // Initialize Server
 const http = createServer((request, response) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Max-Age', 2592000); // 30 days
+
     // Render.com health check
     if (request.method === 'GET' && request.url === '/health') {
         response.statusCode = 200;
@@ -18,10 +21,7 @@ const http = createServer((request, response) => {
     response.end();
 });
 
-const server = new Server(
-    http,
-    { cors: { origin: true, credentials: true } },
-);
+const server = new Server(http);
 
 // Initialize Admin UI Interface
 instrument(server, {
