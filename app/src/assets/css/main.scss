@@ -1,0 +1,103 @@
+/* Variables */
+:root {
+    --pico-red: #e53935;
+    --pico-orange: #fb8c00;
+    --pico-green: #43a047;
+}
+
+// Stop Scrolling
+body {
+    overflow-y: hidden;
+}
+
+nav {
+    height: fit-content;
+}
+
+/* Global Form */
+form,
+form * {
+    margin-bottom: 0;
+}
+
+input[type=text] {
+    width: 79% !important;
+    margin-right: 1%;
+    display: inline;
+}
+
+button {
+    width: 20%;
+    display: inline;
+}
+
+// Messages
+.messages {
+    height: 77%;
+
+    margin-bottom: 1rem;
+    padding: 14px;
+
+    overflow: scroll;
+    background-color: var(--card-background-color);
+
+    scroll-snap-type: y mandatory;
+
+    &>div {
+        scroll-snap-align: start;
+        width: 100%;
+        height: fit-content;
+        width: 100%;
+        margin-right: 0;
+
+        box-shadow: 0 0 0 0;
+        background-color: var(--card-background-color);
+
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+
+        span {
+            font-size: 0.7rem;
+            color: gray;
+        }
+
+        p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+    }
+}
+
+.h-full {
+    height: 100%;
+}
+
+.danger {
+    color: var(--pico-red) !important;
+    --progress-color: var(--pico-orange);
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.lock {
+    vertical-align: top;
+    margin-right: 3px;
+}
+
+article {
+    padding-top: 2.2rem !important;
+    padding-bottom: 2.2rem;
+    cursor: pointer;
+}
+
+span {
+    margin-top: 2px;
+}
+
+footer {
+    text-align: center !important;
+
+    p {
+        color: var(--pico-red);
+    }
+}

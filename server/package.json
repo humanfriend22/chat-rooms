@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon src/index.ts",
+    "build": "npm install && tsc",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/humanfriend22/chat-rooms.git"
+  },
+  "author": {
+    "name": "humanfriend22",
+    "email": "humanfriend22@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/humanfriend22/chat-rooms/issues"
+  },
+  "homepage": "https://github.com/humanfriend22/chat-rooms#readme",
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
