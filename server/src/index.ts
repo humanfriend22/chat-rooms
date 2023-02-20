@@ -9,16 +9,22 @@ const http = createServer((request, response) => {
     // response.setHeader('Access-Control-Max-Age', 2592000); // 30 days
 
     // Render.com health check
-    if (request.method === 'GET' && request.url === '/health') {
-        response.statusCode = 200;
-        response.end('Healthy Server!');
-        return;
-    }
+    if (request.method === 'GET') {
+        if (request.url === '/health') {
 
-    // Redirect to GitHub repository
-    response.setHeader('location', 'https://github.com/humanfriend22/chat-rooms');
-    response.statusCode = 302;
-    response.end();
+
+            response.statusCode = 200;
+            response.end('Healthy Server!');
+            return;
+        }
+
+        if (request.url === '/') {
+            // Redirect to GitHub repository
+            response.setHeader('location', 'https://github.com/humanfriend22/chat-rooms');
+            response.statusCode = 302;
+            response.end();
+        }
+    }
 });
 
 const server = new Server(
